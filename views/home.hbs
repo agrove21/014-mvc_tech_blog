@@ -1,0 +1,20 @@
+<h1>Welcome to Tech Blog</h1>
+<p>
+  This is a blog where you can read about the latest tech news and trends.
+</p>
+
+{{#if posts}}
+  {{#each posts}}
+    <article>
+      <div>
+        <a href="/posts/{{id}}">
+          <h2>{{title}}</h2>
+        </a>
+        <span>Posted by {{user.username}} on {{format_date createdAt}}</span>
+      </div>
+      <p>{{content}}</p>
+    </article>
+  {{/each}}
+{{else}}
+  <p>No posts to display.</p>
+{{/if}}

@@ -1,0 +1,27 @@
+<h1>{{ title }}</h1>
+<p>{{ post.content }}</p>
+{{#if post.user}}
+  <a href="/posts/{{ id }}/edit">Edit</a>
+  <a href="/posts/{{ id }}/delete">Delete</a>
+{{/if}}
+<div>
+  <span>Posted by {{ post.user.username }} on {{ format_date post.createdAt }}</span> 
+</div>
+<div>
+  <h2>Comments</h2>
+  {{#if post.comments}}
+    {{#each post.comments}}
+      <div>
+        <span>{{ user.username }} commented on {{ format_date createdAt }}</span>
+        <p>{{ body }}</p>
+      </div>
+    {{/each}}
+  {{else}}
+    <p>No comments to display.</p>
+  {{/if}}
+</div>
+<form action="/posts/{{ id }}/comment" method="POST">
+  <textarea name="content" placeholder="Add a comment"></textarea>
+  <button type="submit">Submit</button>
+</form>
+
