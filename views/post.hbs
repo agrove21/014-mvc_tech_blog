@@ -1,27 +1,35 @@
-<h1>{{ title }}</h1>
-<p>{{ post.content }}</p>
-{{#if post.user}}
-  <a href="/posts/{{ id }}/edit">Edit</a>
-  <a href="/posts/{{ id }}/delete">Delete</a>
+<h1>{{title}}</h1>
+<p>{{post.content}}</p>
+{{#if author}}
+  <p><a href="/dashboard/edit/{{post.id}}">Edit</a>
+    |
+    <button class="delete-post-btn" data-id="{{post.id}}">Delete</button></p>
 {{/if}}
 <div>
-  <span>Posted by {{ post.user.username }} on {{ format_date post.createdAt }}</span> 
+  <span>Posted by
+    {{post.user.username}}
+    on
+    {{format_date post.createdAt}}</span>
 </div>
 <div>
   <h2>Comments</h2>
+  {{#if loggedIn}}
+    <form class="new-comment-form" data-postid="{{post.id}}">
+      <textarea name="body" placeholder="Add a comment"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  {{else}}
+    <p><a href="/login">Log in</a> to leave a comment.</p>
+  {{/if}}
   {{#if post.comments}}
     {{#each post.comments}}
       <div>
-        <span>{{ user.username }} commented on {{ format_date createdAt }}</span>
-        <p>{{ body }}</p>
+        <span>{{user.username}} commented on {{format_date createdAt}}</span>
+        <p>{{body}}</p>
       </div>
     {{/each}}
   {{else}}
     <p>No comments to display.</p>
   {{/if}}
 </div>
-<form action="/posts/{{ id }}/comment" method="POST">
-  <textarea name="content" placeholder="Add a comment"></textarea>
-  <button type="submit">Submit</button>
-</form>
-
+<script src="/js/comments.js"></script>

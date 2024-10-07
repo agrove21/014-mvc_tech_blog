@@ -1,0 +1,21 @@
+<div>
+    <h2>Dashboard</h2>
+    <p>Welcome to the dashboard, {{user.username}}!</p>
+    <p><a href="/dashboard/new">Create a new post</a></p>
+    <h3>Your Posts</h3>
+    {{#if posts.length}}
+        <div class="posts">
+        {{#each posts}}
+            <div class="post">
+            <h4>{{title}}</h4>
+            <p>{{content}}</p>
+            <p>Created on {{format_date createdAt}}</p>
+            <p><a href="/dashboard/edit/{{id}}">Edit</a> | <button class="delete-post-btn" data-id="{{id}}">Delete</button></p>
+            </div>
+        {{/each}}
+        </div>
+    {{else}}
+        <p>You have not created any posts yet. <a href="/new">Create a new post</a>.</p>
+    {{/if}}
+    
+</div>
