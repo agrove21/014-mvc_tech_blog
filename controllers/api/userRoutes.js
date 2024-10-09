@@ -69,4 +69,18 @@ router.post("/login", async (req, res) => {
     res.status(500).json({ message: "Internal Error try again later" });
   }
 });
+
+// Route to log out a user
+router.post('/logout', (req, res) => {
+  if (req.session.logged_in) {
+    // Destroy the session
+    req.session.destroy(() => {
+      res.status(204).end(); // Send success response
+    });
+  } else {
+    res.status(404).end(); // If user is not logged in, send 404
+  }
+});
+
+
 module.exports = router;
