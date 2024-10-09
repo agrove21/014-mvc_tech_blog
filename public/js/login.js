@@ -25,7 +25,9 @@ document
         }
       })
         .then(function (data) {
+          if (data) {
             showMessage(data.message, "danger");
+          }
         })
       .catch(function (error) {
         showMessage(error.message, "danger");
@@ -59,7 +61,9 @@ document
         }
       })
         .then(function (data) {
+          if (data) {
             showMessage(data.message, "danger");
+          }
         })
       .catch(function (error) {
         showMessage(error.message, "danger");

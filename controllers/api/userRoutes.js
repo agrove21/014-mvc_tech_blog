@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Post, Comment } = require("../../models");
+const { User } = require("../../models");
 const bcrypt = require("bcrypt");
 
 // POST / signup
@@ -18,8 +18,6 @@ router.post("/", async (req, res) => {
       res.status(400).json({ message: "User already exists" });
       return;
     }
-    const hashedPassword = await bcrypt.hash(req.body.password, 10);
-    req.body.password = hashedPassword;
     const userData = await User.create(req.body);
     delete userData.password;
 
@@ -54,6 +52,7 @@ router.post("/login", async (req, res) => {
       req.body.password,
       userData.password
     );
+    console.log(validPassword);
     if (!validPassword) {
       res.status(400).json({ message: "Incorrect username or password" });
       return;
@@ -70,17 +69,17 @@ router.post("/login", async (req, res) => {
   }
 });
 
-// Route to log out a user
-router.post('/logout', (req, res) => {
-  if (req.session.logged_in) {
-    // Destroy the session
-    req.session.destroy(() => {
-      res.status(204).end(); // Send success response
-    });
-  } else {
-    res.status(404).end(); // If user is not logged in, send 404
-  }
-});
+// // Route to log out a user
+// router.post('/logout', (req, res) => {
+//   if (req.session.logged_in) {
+//     // Destroy the session
+//     req.session.destroy(() => {
+//       res.status(204).end(); // Send success response
+//     });
+//   } else {
+//     res.status(404).end(); // If user is not logged in, send 404
+//   }
+// });
 
 
 module.exports = router;
