@@ -52,7 +52,7 @@ router.post("/login", async (req, res) => {
       req.body.password,
       userData.password
     );
-    console.log(validPassword);
+   
     if (!validPassword) {
       res.status(400).json({ message: "Incorrect username or password" });
       return;
