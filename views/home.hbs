@@ -2,17 +2,16 @@
 <p class="p-3 mb-2 bg-info-subtle text-info-emphasis">
   Explore the latest in tech, from innovations to insights, and share your own ideas with the community.
 </p>
-
 {{#if posts}}
   {{#each posts}}
-    <article>
-      <div>
+    <article class="p-1 border border-1 mb-3">
+      <div class="p-1 post d-flex justify-content-between align-items-center bg-light">
         <a href="/posts/{{id}}">
-          <h2>{{title}}</h2>
+          <h2 class="text-capitalize ">{{title}}</h2>
         </a>
         <span>Posted by {{user.username}} on {{format_date createdAt}}</span>
       </div>
-      <p>{{content}}</p>
+      <p class="p-1">{{content}}</p>
     </article>
   {{/each}}
 {{else}}

@@ -1,6 +1,6 @@
 <div>
     <h2 class="p-3 mb-2 bg-info text-white .bg-gradient">Edit Post</h2>
-    <form id="edit-post-form" data-id="{{post.id}}">
+    <form id="edit-post-form" class="p-3 mb-2 bg-body-secondary" data-id="{{post.id}}">
         <div class="form-group">
             <label for="title">Title</label>
             <input type="text" name="title" class="form-control" id="title" value="{{post.title}}" />    
@@ -9,7 +9,7 @@
             <label for="content">Content</label>
             <textarea name="content" class="form-control" id="content">{{post.content}}</textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="m-3 btn btn-dark">Submit</button>
     </form>
 </div>
 

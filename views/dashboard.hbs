@@ -1,21 +1,34 @@
 <div>
-    <h2 class="p-3 mb-2 bg-info text-white .bg-gradient">Dashboard</h2>
-    <p class="p-3 mb-2 bg-info-subtle text-info-emphasis">Welcome to the dashboard, {{user.username}}!</p>
-    <p class="p-3 mb-2"><a href="/dashboard/new">Create a new post</a></p>
-    <h3 class="p-3 mb-2">Your Posts</h3>
-    {{#if posts.length}}
-        <div class="posts">
-        {{#each posts}}
-            <div class="post">
-            <h4>{{title}}</h4>
-            <p>{{content}}</p>
-            <p>Created on {{format_date createdAt}}</p>
-            <p><a href="/dashboard/edit/{{id}}">Edit</a> | <button class="btn btn-dark delete-post-btn" data-id="{{id}}">Delete</button></p>
-            </div>
-        {{/each}}
-        </div>
-    {{else}}
-        <p class="p-3 mb-2">You have not created any posts yet. <a href="/dashboard/new">Create a new post</a>.</p>
-    {{/if}}
-    
+  <h2 class="p-3 mb-2 bg-info text-white .bg-gradient">Dashboard</h2>
+  <p class="p-3 mb-2 bg-info-subtle text-info-emphasis">Welcome to the
+    dashboard,
+    {{user.username}}!</p>
+  <p class="p-3 mb-2"><a href="/dashboard/new">Create a new post</a></p>
+  <div>
+    <h3 class="p-3">Your Posts</h3>
+     {{#if posts.length}}
+    <div class="posts p-3">
+      {{#each posts}}
+        <article class="border border-1 mb-4">
+          <div class="p-1 post d-flex justify-content-between align-items-center bg-info-subtle p-2 border-bottom border-2 border-info">
+            <h4
+              class="text-capitalize mb-0"
+            >{{title}}</h4>
+            <span class="fs-6">Created on {{format_date createdAt}}</span>
+          </div>
+          <p class="p-1">{{content}}</p>
+          <p class="p-1"><a href="/dashboard/edit/{{id}}">Edit</a>
+            <button
+              class="btn btn-dark delete-post-btn"
+              data-id="{{id}}"
+            >Delete</button></p>
+        </article>
+      {{/each}}
+    </div>
+  </div>
+  {{else}}
+    <p class="p-3 mb-2">You have not created any posts yet.
+      <a href="/dashboard/new">Create a new post</a>.</p>
+  {{/if}}
+
 </div>
