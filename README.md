@@ -31,7 +31,7 @@ Welcome to Contribute! Fork the repository, create a new branch, and submit a pu
 n/a
 
 ## Deployed Website
-<!-- https://zero11-note-taker.onrender.com/ -->
+https://zero14-mvc-tech-blog.onrender.com/
 
 ## Screenshots
 ### Login or Sign Up
