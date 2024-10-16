@@ -69,17 +69,17 @@ router.post("/login", async (req, res) => {
   }
 });
 
-// // Route to log out a user
-// router.post('/logout', (req, res) => {
-//   if (req.session.logged_in) {
-//     // Destroy the session
-//     req.session.destroy(() => {
-//       res.status(204).end(); // Send success response
-//     });
-//   } else {
-//     res.status(404).end(); // If user is not logged in, send 404
-//   }
-// });
+// Route to log out a user
+router.post('/logout', (req, res) => {
+  if (req.session.logged_in) {
+    // Destroy the session
+    req.session.destroy(() => {
+      res.status(204).end(); // Send success response
+    });
+  } else {
+    res.status(404).end(); // If user is not logged in, send 404
+  }
+});
 
 
 module.exports = router;

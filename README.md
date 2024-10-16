@@ -11,6 +11,8 @@ I built a CMS-style blog site, where developers can publish their blog posts and
 - [License](#license)
 - [Contributing](#contributing)
 - [Tests](#tests)
+- [Deployed Website](#deployedwebsite)
+- [TScreenshoots](#screenshoots)
 - [Questions](#questions)
 
 ## Installation
@@ -31,9 +33,24 @@ n/a
 ## Deployed Website
 <!-- https://zero11-note-taker.onrender.com/ -->
 
-## Screenshot
+## Screenshots
+### Login or Sign Up
+<img src="develop/images/login_signup.png" width="800px">
+
+### Home
+<img src="develop/images/home.png" width="800px">
+
+### Dashboard
+<img src="develop/images/dashboard.png" width="800px">
+
+### New Post
+<img src="develop/images/new post.png" width="800px">
+
+### Add comment
+<img src="develop/images/comments.png" width="800px">
+
 ### File Structure
-<!-- <img src="assets/view all.png" width="800px"> -->
+<img src="develop/images/file structure.png" width="800px">
 
 ## Questions
 If you have any questions, you can reach me at [annhargrove21@gmail.com](mailto:annhargrove21@gmail.com). You can also find more of my work at [agrove21](https://github.com/agrove21).
