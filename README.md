@@ -11,8 +11,8 @@ I built a CMS-style blog site, where developers can publish their blog posts and
 - [License](#license)
 - [Contributing](#contributing)
 - [Tests](#tests)
-- [Deployed Website](#deployedwebsite)
-- [TScreenshoots](#screenshoots)
+- [Deployed Website](#deployed-website)
+- [Screenshoots](#screenshots)
 - [Questions](#questions)
 
 ## Installation
