@@ -46,7 +46,7 @@ n/a
 ### New Post
 <img src="develop/images/new post.png" width="800px">
 
-### Add comment
+### Add Comment
 <img src="develop/images/comments.png" width="800px">
 
 ### File Structure
